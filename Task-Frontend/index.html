@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Task Application</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Task Application</h1>
+    </header>
+
+    <form>
+      <div>
+        <input type="text" class="create-task-title" placeholder="Task Title" />
+        <input type="text" class="create-task-description" placeholder="Task Description"/>
+      </div>
+      <button class="create-task-button" type="submit">
+        <i class="fas fa-plus-square"></i>
+      </button>
+      <div class="select">
+        <select name="tasks" class="filter-task">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="task-container">
+      <ul class="task-list"></ul>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
