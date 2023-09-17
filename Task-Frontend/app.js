@@ -226,12 +226,12 @@ function filterTask(e) {
   tasks.forEach(function (task) {
     switch (e.target.value) {
       case "all":
-        task.style.display = "flex";
+        task.style.display = "inline-flex";
         break;
 
       case "completed":
         if (task.classList.contains("completed")) {
-          task.style.display = "flex";
+          task.style.display = "inline-flex";
         } else {
           task.style.display = "none";
         }
@@ -239,7 +239,7 @@ function filterTask(e) {
 
       case "uncompleted":
         if (!task.classList.contains("completed")) {
-          task.style.display = "flex";
+          task.style.display = "inline-flex";
         } else {
           task.style.display = "none";
         }
