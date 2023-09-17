@@ -1,6 +1,10 @@
 package com.watcix.taskbackend.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TaskDto {
+    private Integer id;
     private String taskTitle;
     private String taskDescription;
 
@@ -10,6 +14,20 @@ public class TaskDto {
     public TaskDto(String taskTitle, String taskDescription) {
         this.taskTitle = taskTitle;
         this.taskDescription = taskDescription;
+    }
+
+    public TaskDto(Integer id, String taskTitle, String taskDescription) {
+        this.id = id;
+        this.taskTitle = taskTitle;
+        this.taskDescription = taskDescription;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTaskTitle() {

@@ -39,8 +39,21 @@ public class TaskService {
     }
 
     public Task createTask(TaskDto taskDto) {
-        Task task = new Task(taskDto.getTaskTitle(), taskDto.getTaskDescription(), new Date());
-        return taskRepository.save(task);
+        Task task = null;
+        if (taskDto.getId() != null) {
+            Optional<Task> taskOp = taskRepository.findById(taskDto.getId());
+            if (taskOp.isPresent()) {
+                task = taskOp.get();
+                task.setTitle(taskDto.getTaskTitle());
+                task.setDescription(taskDto.getTaskDescription());
+            }
+        }
+        else
+            task = new Task(taskDto.getTaskTitle(), taskDto.getTaskDescription(), new Date());
+        if (ObjectUtils.isEmpty(task))
+            return null;
+        else
+            return taskRepository.save(task);
     }
 
     public Task getTaskByTitle(String title) {

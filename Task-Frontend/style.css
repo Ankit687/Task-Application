@@ -1,146 +1,228 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-image: linear-gradient(120deg, #cfb049, #c5684e);
-    color: white;
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
-  }
-  
-  header {
-    font-size: 1.5rem;
-  }
-  
-  header,
-  form {
-    min-height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  form input,
-  form button {
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    background: white;
-  }
-  
-  form button {
-    color: #d88771;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  form button:hover {
-    background: #d88771;
-    color: white;
-  }
-  
-  .task-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .task-list {
-    min-width: 50%;
-    list-style: none;
-  }
-  
-  .task {
-    margin: 0.5rem;
-    background: white;
-    color: black;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.5s ease;
-  }
-  
-  .task li {
-    flex: 1;
-  }
-  
-  .trash-btn,
-  .complete-btn {
-    background: #ff6f47;
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .complete-btn {
-    background: rgb(52, 190, 52);
-  }
-  
-  .task-item {
-    padding: 0rem, 0.5rem;
-    margin-left: 0.6rem;
-  }
-  
-  .fa-trash,
-  .fa-check {
-    pointer-events: none;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    opacity: 0.5;
-  }
-  
-  .fall {
-    transform: translateY(8rem) rotateZ(20deg);
-    opacity: 0;
-  }
-  
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    border: none;
-  }
-  
-  .select {
-    margin: 1rem;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  select {
-    color: #ff6f47;
-    width: 10rem;
-    cursor: pointer;
-    padding: 1rem;
-  }
-  
-  .select::after {
-    content: "\25BC";
-    position: absolute;
-    background: #ff6f47;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    pointer-events: none;
-    transition: all 1.3s ease;
-  }
-  
-  .select:hover::after {
-    background: white;
-    color: #ff6f47;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .hidden-item {
-    display: none;
-  }
-  
+body {
+  background-image: linear-gradient(120deg, #cfb049, #c5684e);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #d88771;
+  color: white;
+}
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list {
+  min-width: 70%;
+  list-style: none;
+}
+
+.task {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+/* .task li {
+  flex: 1;
+} */
+
+.trash-btn,
+.complete-btn,
+.edit-btn,
+.update-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0.2rem;
+}
+
+.trash-btn {
+  margin-right: 0.5rem;
+}
+
+.complete-btn {
+  background: rgb(52, 190, 52);
+}
+
+.edit-btn {
+  background: rgb(233, 196, 48);
+}
+
+.update-btn {
+  background: rgb(192, 67, 88);
+}
+
+.task-item {
+  padding: 0rem, 0.5rem;
+  margin: 1rem;
+}
+
+.edit-item {
+  padding: 1rem;
+  margin-left: 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* .date-item {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+} */
+
+.fa-trash,
+.fa-check,
+.fa-edit {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* .edit {
+
+  } */
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #ff6f47;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 1.3s ease;
+}
+
+.select:hover::after {
+  background: white;
+  color: #ff6f47;
+}
+
+.hidden-item {
+  display: none;
+}
+
+
+/* Styles for the modal container */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  z-index: 1;
+}
+
+/* Styles for the modal content */
+.modal-content {
+  color: #000;
+  background-color: #fff;
+  /* Background color of the modal */
+  margin: 15% auto;
+  /* Position the modal in the center */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Style for the close button (the "X" in the corner) */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0px 12px 12px 0px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+/* Style for the message inside the modal */
+#popupMessage {
+  font-size: 18px;
+  padding: 10px;
+}
