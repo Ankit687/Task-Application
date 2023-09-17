@@ -323,18 +323,24 @@ function getAllTaskList() {
           taskDiv.appendChild(newTaskStatus);
 
           taskDiv.classList.toggle("completed");
+
+          // check mark button
+          const completedButton = document.createElement("button");
+          completedButton.classList.add("complete-btn");
+          completedButton.innerHTML = '<i class="fas fa-list"> </i>';
+          taskDiv.appendChild(completedButton);
         } else {
           const newTaskStatus = document.createElement("li");
           newTaskStatus.innerText = 'IN-PROGRESS';
           newTaskStatus.classList.add("task-item");
           taskDiv.appendChild(newTaskStatus);
-        }
 
-        // check mark button
-        const completedButton = document.createElement("button");
-        completedButton.classList.add("complete-btn");
-        completedButton.innerHTML = '<i class="fas fa-check"> </i>';
-        taskDiv.appendChild(completedButton);
+          // check mark button
+          const completedButton = document.createElement("button");
+          completedButton.classList.add("complete-btn");
+          completedButton.innerHTML = '<i class="fas fa-check"> </i>';
+          taskDiv.appendChild(completedButton);
+        }
 
         // edit button
         const editButton = document.createElement("button");
@@ -430,6 +436,12 @@ function completedTask(id, task) {
           newTaskStatus.classList.add("task-item");
           task.appendChild(newTaskStatus);
 
+          // check mark button
+          const completedButton = document.createElement("button");
+          completedButton.classList.add("complete-btn");
+          completedButton.innerHTML = '<i class="fas fa-list"> </i>';
+          task.appendChild(completedButton);
+
         } else {
           task.removeChild(task.childNodes[4]);
           task.removeChild(task.childNodes[4]);
@@ -440,13 +452,13 @@ function completedTask(id, task) {
           newTaskStatus.innerText = 'IN-PROGRESS';
           newTaskStatus.classList.add("task-item");
           task.appendChild(newTaskStatus);
-        }
 
-        // check mark button
-        const completedButton = document.createElement("button");
-        completedButton.classList.add("complete-btn");
-        completedButton.innerHTML = '<i class="fas fa-check"> </i>';
-        task.appendChild(completedButton);
+          // check mark button
+          const completedButton = document.createElement("button");
+          completedButton.classList.add("complete-btn");
+          completedButton.innerHTML = '<i class="fas fa-check"> </i>';
+          task.appendChild(completedButton);
+        }
 
         // edit button
         const editButton = document.createElement("button");
@@ -528,6 +540,8 @@ function updateTask(id, task) {
 function searchTask(event) {
   event.preventDefault();
 
+  console.log(event.target.parentElement);
+
   const apiUrl = 'http://localhost:8080/getTask/' + searchTitle.value;
 
   // Make a GET request using the Fetch API
@@ -593,6 +607,12 @@ function searchTask(event) {
         filterOption.value = "completed";
 
         taskDiv.classList.toggle("completed");
+
+        // check mark button
+        const completedButton = document.createElement("button");
+        completedButton.classList.add("complete-btn");
+        completedButton.innerHTML = '<i class="fas fa-list"> </i>';
+        taskDiv.appendChild(completedButton);
       } else {
         const newTaskStatus = document.createElement("li");
         newTaskStatus.innerText = 'IN-PROGRESS';
@@ -600,13 +620,13 @@ function searchTask(event) {
         taskDiv.appendChild(newTaskStatus);
 
         filterOption.value = "uncompleted";
-      }
 
-      // check mark button
-      const completedButton = document.createElement("button");
-      completedButton.classList.add("complete-btn");
-      completedButton.innerHTML = '<i class="fas fa-check"> </i>';
-      taskDiv.appendChild(completedButton);
+        // check mark button
+        const completedButton = document.createElement("button");
+        completedButton.classList.add("complete-btn");
+        completedButton.innerHTML = '<i class="fas fa-check"> </i>';
+        taskDiv.appendChild(completedButton);
+      }
 
       // edit button
       const editButton = document.createElement("button");

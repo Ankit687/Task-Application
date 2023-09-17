@@ -32,6 +32,10 @@ form button {
   background: white;
 }
 
+::placeholder {
+  opacity: 0.5; /* You can adjust the opacity value to control the level of blur */
+}
+
 form button {
   color: #d88771;
   background: white;
@@ -123,7 +127,8 @@ form button:hover {
 
 .fa-trash,
 .fa-check,
-.fa-edit {
+.fa-edit,
+.fa-list {
   pointer-events: none;
 }
 
@@ -160,6 +165,7 @@ select {
   width: 10rem;
   cursor: pointer;
   padding: 1rem;
+  font-size: 0.9rem;
 }
 
 .select::after {
