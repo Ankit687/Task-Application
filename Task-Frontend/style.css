@@ -9,11 +9,11 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  text-align: center;
+  /* text-align: center; */
 }
 
 header {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 header,
@@ -27,7 +27,7 @@ form {
 form input,
 form button {
   padding: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   border: none;
   background: white;
 }
@@ -45,7 +45,7 @@ form button:hover {
 }
 
 .container {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -57,7 +57,7 @@ form button:hover {
 }
 
 .task-list {
-  min-width: 70%;
+  min-width: 60%;
   list-style: none;
 }
 
@@ -65,16 +65,16 @@ form button:hover {
   margin: 0.5rem;
   background: white;
   color: black;
-  font-size: 1.5rem;
-  display: inline-flex;
+  font-size: 1.4rem;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease;
 }
 
-/* .task li {
+.task li {
   flex: 1;
-} */
+}
 
 .trash-btn,
 .complete-btn,
@@ -85,8 +85,8 @@ form button:hover {
   border: none;
   padding: 1rem;
   cursor: pointer;
-  font-size: 1rem;
-  margin: 0.2rem;
+  font-size: 1.1rem;
+  margin: 0.3rem;
 }
 
 .trash-btn {
@@ -107,7 +107,7 @@ form button:hover {
 
 .task-item {
   padding: 0rem, 0.5rem;
-  margin: 1rem;
+  margin-left: 0.6rem;
 }
 
 .edit-item {
